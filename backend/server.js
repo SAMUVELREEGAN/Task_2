@@ -9,13 +9,14 @@ const PORT = process.env.PORT
 
 const server = express()
 server.use(cors({
-    origin: "http://localhost:3000", 
+    origin: "http://localhost:3001", 
     credentials: true,
 }))
 
 server.use(bodyParser.json())
 server.use(require('./Routes/UserRoute'))
-server.use(require('./Routes/AllCategoryRoute'))
+// server.use(require('./Routes/AllCategoryRoute'))
+server.use(require('./Routes/OnBoardRoute'))
 
 
 server.listen(PORT , ()=>{console.log(`Server Listen ${PORT}`)})
